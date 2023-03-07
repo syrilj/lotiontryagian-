@@ -4,6 +4,7 @@ import "./index.css";
 import Main from "./main/Main";
 import Sidebar from "./sidebar/Sidebar";
 import * as React from 'react';
+
 function App() {
   const [notes, setNotes] = useState(
     localStorage.notes ? JSON.parse(localStorage.notes) : []
@@ -53,13 +54,17 @@ function App() {
 
   return (
     <div className="App">
-      <header className="header">
-        <div className="header__menu-icon" onClick={toggleSidebar}>
-          &#9776;
-        </div>
-        <h1 className="header__title">Lotion</h1>
-      </header>
-      <div className="main-wrapper">
+     <header className="header">
+  <div className="header__menu-icon" onClick={toggleSidebar}>
+    &#9776;
+  </div>
+  <div className="header__title-subtitle">
+    <h1 className="header__title">Lotion</h1>
+    <h2 className="header__subtitle">Notion But Worse</h2>
+  </div>
+</header>
+
+      <div className={`main-wrapper ${!showSidebar ? 'full-screen' : ''}`}>
         {showSidebar && (
           <Sidebar
             notes={notes}
@@ -69,7 +74,7 @@ function App() {
             setActiveNote={setActiveNote}
           />
         )}
-        <Main activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
+        <Main className={showSidebar ? '' : 'full-screen'} activeNote={getActiveNote()} onUpdateNote={onUpdateNote} />
       </div>
     </div>
   );

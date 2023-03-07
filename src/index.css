@@ -6,13 +6,10 @@
 
 /* GLOBAL STYLES */
 
-body,
-.App {
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
   font-size: 16px;
   background: url(https://www.toptal.com/designers/subtlepatterns/patterns/lightpaperfibers.png);
 }
@@ -33,13 +30,14 @@ button:hover {
 
 .App {
   display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 /* SIDEBAR STYLES */
 
 .app-sidebar {
   width: 30%;
-  height: 100vh;
   border-right: 1px solid #ddd;
 }
 
@@ -87,12 +85,14 @@ button:hover {
 /* NOTE EDITOR/PREVIEW (MAIN) STYLES */
 
 .app-main {
-  width: 70%;
-  height: 100vh;
+ 
+  height: 100vp;
+  width: 100%;
 }
 .app-main-note-edit,
 .app-main-note-preview {
-  height: 50vh;
+  height: 100vp;
+  width: 100%;
 }
 
 .no-active-note {
@@ -107,43 +107,46 @@ button:hover {
 /* Editing */
 .app-main-note-edit {
   padding: 25px;
+  height: 100%;
+  width: 100%;
 }
-
-.app-main-note-edit input,
-textarea {
-  display: block;
-  border: 1px solid #ddd;
+  
+  .app-main-note-edit input,
+  textarea {
   margin-bottom: 20px;
   width: 100%;
-  height: calc(50vh - 130px);
-  padding: 10px;
-  resize: none;
+ 
   font-size: inherit;
   font-family: inherit;
-}
-.app-main-note-edit input {
-  height: 50px;
+  height: 100vp;
+  width: 100%;
+  }
+  .app-main-note-edit input {
+  
   font-size: 2rem;
-}
-
-/* Preview */
-.app-main-note-preview {
+  height: 100vp;
+  width: 100%;
+  }
+  
+  /* Preview */
+  .app-main-note-preview {
   border-top: 1px solid #ddd;
   overflow-y: scroll;
   background: rgba(0, 0, 0, 0.02);
-}
-
-.preview-title {
-  padding: 25px 25px 0 25px;
+  height: calc(50vh + 80px);
+  padding: 25px;
+  }
+  
+  .preview-title {
   margin: 0;
-}
-
-.markdown-preview {
-  padding: 0 25px 25px 25px;
+  }
+  
+  .markdown-preview {
   font-size: 1rem;
   line-height: 2rem;
-}
-header {
+  }
+  
+  header {
   position: fixed;
   top: 0;
   left: 0;
@@ -152,37 +155,73 @@ header {
   background-color: #fff;
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-/* App styles */
-.App {
+  }
+  
+  /* App styles */
+  .App {
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-/* Header styles */
-.header {
+  }
+  
+  /* Header styles */
+  .header {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 4rem;
   background-color: #f0f0f0;
   position: relative;
-}
-
-.header__menu-icon {
+  }
+  
+  .header__menu-icon {
   position: absolute;
   left: 1rem;
   cursor: pointer;
   font-size: 2rem;
-}
+  }
 
-.header__title {
+  .header__title {
   font-size: 1.5rem;
-}
-
-/* Main wrapper styles */
-.main-wrapper {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  width: 50%;
+  float: left;
+  text-align: justify;  /* For Edge */
+  text-align-last: right
+  }
+  
+  /* Main wrapper styles */
+  .main-wrapper {
   display: flex;
-  height: 100%;
-}
+  height: 100vp;
+  width: 100vp;
+  }
+  .header__title-subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header__title {
+    font-size: 1.75rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    width: 75%;
+ 
+    position: relative;
+  }
+  
+  .header__subtitle {
+    font-size: 0.875rem;
+    margin-top: 0.2rem;
+    text-align: center;
+    width: 100%;
+    height: 100;
+    position: relative;
+
+  }
+  .app-full-screen{
+    height: 100vh;
+    width: 100vw;
+  }

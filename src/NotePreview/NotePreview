@@ -1,0 +1,24 @@
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+
+const NotePreview = ({ content }) => {
+  const [markdown, setMarkdown] = useState("");
+
+  useEffect(() => {
+    let markdownContent;
+
+    try {
+      markdownContent = JSON.parse(content).text;
+    } catch (err) {
+      markdownContent = content;
+    }
+
+    setMarkdown(markdownContent);
+  }, [content]);
+
+  return (
+    <div className="note-preview">
+      <ReactMarkdown components={{ p: TextOnlyRenderer }}>{markdown}</ReactMarkdown>
+    </div>
+  );
+};
