@@ -25,7 +25,7 @@ const NotePreview = ({ body }) => {
 };
 
 
-const Sidebar = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) => {
+const Sidebar = ({ notes = [], onAddNote, onDeleteNote, activeNote, setActiveNote }) => {
   const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
 
   return (
@@ -63,10 +63,3 @@ const Sidebar = ({ notes, onAddNote, onDeleteNote, activeNote, setActiveNote }) 
 };
 
 export default Sidebar;
-
-
-
-
-
-
-
