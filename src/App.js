@@ -4,8 +4,7 @@ import SideBar from "./sidebar/Sidebar";
 import {useState, useEffect} from "react";
 import LotionTop from "./lotionTop/lotionTop";
 import uuid from "react-uuid";
-import React from 'react';
-import { BrowserRouter,Route } from "react-router-dom";
+import React from 'react'
 function App() {
 
  function onAddNote() {
@@ -22,7 +21,7 @@ function App() {
 
  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem("notes")) || []);
  const [activeNote, setActiveNote] = useState(false);
- const [noteAdded, setNoteAdded] = useState(false);
+ const [,setNoteAdded] = useState(false);
 
 
  const onUpdateNote = (updatedNote) => {

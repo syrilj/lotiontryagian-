@@ -1,15 +1,15 @@
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-function Main ({ activeNote, getActiveNote, onUpdateNote, onDeleteNote, note })  {
- const [date, setDate] = useState(Date.now());
+function Main ({ activeNote,  onUpdateNote, onDeleteNote, note })  {
+ const [, setDate] = useState(Date.now());
  const [title, setTitle] = useState("");
  const [content, setContent] = useState("");
  const [editing, setEditing] = useState(false);
- const [toggleFields, setToggleFields] = useState(false);
+ 
 
 
  useEffect(() => {

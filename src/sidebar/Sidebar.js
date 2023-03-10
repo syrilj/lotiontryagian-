@@ -1,6 +1,3 @@
-import { useEffect} from "react";
-import { useParams, Link } from "react-router-dom";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import React from 'react';
 function Sidebar (
@@ -36,23 +33,9 @@ function Sidebar (
       );
     }
  
- 
-    const options = {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-    };
+
    
-    const formatDate = (when) => {
-      const formatted = new Date(when).toLocaleString("en-US", options);
-      if (formatted === "Invalid Date") {
-          return "";
-      }
-      return formatted;
-    };
- 
+
  
     return (
     <div id = "sidebar" className="sidebar">
@@ -87,6 +70,5 @@ function Sidebar (
  };
  
  export default Sidebar;
- 
  
  
